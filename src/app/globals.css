@@ -207,6 +207,18 @@ body::-webkit-scrollbar {
     }
   }
 
+  .footer-section {
+    @apply bg-dark-brown overflow-hidden;
+
+    .social-btn {
+      @apply size-12 rounded-full border border-milk/30 flex-center cursor-pointer hover:bg-milk/10 transition-colors;
+    }
+
+    .copyright-box {
+      @apply flex md:flex-row flex-col justify-between items-center md:px-10 px-5 py-8 mt-10 border-t border-milk/20 text-milk/50 font-paragraph text-sm gap-4;
+    }
+  }
+
 @layer utilities {
   .flex-center {
     @apply flex justify-center items-center;

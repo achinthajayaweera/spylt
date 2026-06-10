@@ -8,6 +8,7 @@ import FlavorSection from "@/sections/FlavorSection";
 import NutritionSection from "@/sections/NutritionSection";
 import BenefitSection from "@/sections/BenefitSection";
 import TestimonialSection from "@/sections/TestimonialSection";
+import FooterSection from "@/sections/FooterSection";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -29,6 +30,7 @@ export default function Home() {
       <NutritionSection />
       <BenefitSection />
       <TestimonialSection />
+      <FooterSection />
     </main>
   );
 }
