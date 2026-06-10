@@ -134,6 +134,34 @@ body::-webkit-scrollbar {
     }
   }
 
+  .nutrition-section {
+    @apply bg-milk relative;
+
+    .big-img {
+      @apply md:absolute md:right-0 md:top-0 md:w-[55%] w-full md:h-full object-cover;
+    }
+
+    .nutrition-text-scroll {
+      @apply rotate-[-3deg] opacity-0;
+
+      h2 {
+        @apply 2xl:text-[8.5rem] md:text-8xl text-5xl font-bold uppercase leading-[9vw] tracking-[-.35vw];
+      }
+    }
+
+    .nutrition-box {
+      @apply md:w-60 w-full md:mt-0 mt-10 md:mb-0 mb-10;
+
+      .list-wrapper {
+        @apply flex md:flex-col flex-row md:h-full h-32 border border-dark-brown/30;
+
+        .spacer-border {
+          @apply absolute md:bottom-0 md:right-[-1px] md:w-[1px] md:h-full right-0 bottom-[-1px] w-full h-[1px] bg-dark-brown/30;
+        }
+      }
+    }
+  }
+
 @layer utilities {
   .flex-center {
     @apply flex justify-center items-center;

@@ -5,6 +5,7 @@ import Preloader from "@/components/Preloader";
 import HeroSection from "@/sections/HeroSection";
 import MessageSection from "@/sections/MessageSection";
 import FlavorSection from "@/sections/FlavorSection";
+import NutritionSection from "@/sections/NutritionSection";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -23,6 +24,7 @@ export default function Home() {
       />
       <MessageSection />
       <FlavorSection />
+      <NutritionSection />
     </main>
   );
 }
