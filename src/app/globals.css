@@ -112,6 +112,26 @@ body::-webkit-scrollbar {
         @apply 2xl:text-[8.5rem] md:text-8xl text-5xl font-bold uppercase leading-[9vw] tracking-[-.35vw];
       }
     }
+
+    .slider-wrapper {
+      @apply flex items-center lg:h-screen;
+
+      .flavors {
+        @apply flex lg:flex-row flex-col lg:items-center items-center gap-10 lg:gap-5 px-5 lg:px-0;
+
+        h1 {
+          @apply absolute bottom-5 left-1/2 -translate-x-1/2 text-2xl md:text-4xl font-bold uppercase text-center whitespace-nowrap;
+        }
+
+        .drinks {
+          @apply absolute bottom-0 left-1/2 -translate-x-1/2;
+        }
+
+        .elements {
+          @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-full;
+        }
+      }
+    }
   }
 
 @layer utilities {

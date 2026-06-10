@@ -1,4 +1,5 @@
 import FlavorTitle from "@/components/FlavorTitle";
+import FlavorSlider from "@/components/FlavorSlider";
 
 const FlavorSection = () => {
   return (
@@ -8,10 +9,7 @@ const FlavorSection = () => {
           <FlavorTitle />
         </div>
         <div className="h-full">
-          {/* FlavorSlider will be added in v6 */}
-          <div className="flex-center h-full px-10 py-20 text-dark-brown opacity-30">
-            <p className="font-bold uppercase tracking-widest">Slider coming in v6</p>
-          </div>
+          <FlavorSlider />
         </div>
       </div>
     </section>
