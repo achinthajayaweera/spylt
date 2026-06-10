@@ -60,23 +60,23 @@ const FooterSection = () => {
         </div>
 
         <div className="copyright-box">
-  <p>
-    Designed &amp; Developed by{" "}
-    
-      href="https://wa.me/94761490417"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="underline hover:opacity-75 transition-opacity"
-    >
-      Achintha Jayaweera
-    </a>
-    {" "}- Copyright &copy; 2025 Spylt - All Rights Reserved
-  </p>
-  <div className="flex items-center gap-7">
-    <p>Privacy Policy</p>
-    <p>Terms of Service</p>
-  </div>
-</div>
+          <p>
+            Designed and Developed by{" "}
+            <a
+              href="https://wa.me/94761490417"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:opacity-75 transition-opacity"
+            >
+              Achintha Jayaweera
+            </a>
+            {" "}- Copyright 2025 Spylt - All Rights Reserved
+          </p>
+          <div className="flex items-center gap-7">
+            <p>Privacy Policy</p>
+            <p>Terms of Service</p>
+          </div>
+        </div>
       </div>
     </footer>
   );
