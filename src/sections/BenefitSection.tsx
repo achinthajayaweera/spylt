@@ -1,5 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import ClipPathTitle from "@/components/ClipPathTitle";
+import VideoPin from "@/components/VideoPin";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
@@ -91,7 +92,7 @@ const BenefitSection = () => {
       </div>
 
       <div className="relative overlay-box">
-        {/* VideoPin will be added in v9 */}
+        <VideoPin />
       </div>
     </section>
   );
