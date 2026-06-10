@@ -2,11 +2,9 @@ import { useMediaQuery } from "react-responsive";
 import { nutrientList } from "../constants";
 import { useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger, SplitText } from "gsap/all";
+import { SplitText } from "gsap/all";
 import gsap from "gsap";
 import Image from "next/image";
-
-gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const NutritionSection = () => {
   const isMobile = useMediaQuery({
@@ -69,21 +67,9 @@ const NutritionSection = () => {
 
   return (
     <section className="nutrition-section">
-      <Image
-        src="/images/slider-dip.webp"
-        width={2000}
-        height={2000}
-        alt="slider-dip"
-        className="w-full object-cover"
-      />
+      <Image src="/images/slider-dip.webp" width={2000} height={2000} alt="slider-dip" className="w-full object-cover" />
 
-      <Image
-        src="/images/big-img.webp"
-        width={3000}
-        height={3000}
-        alt="big-img"
-        className="big-img"
-      />
+      <Image src="/images/big-img.webp" width={3000} height={3000} alt="big-img" className="big-img" />
 
       <div className="flex md:flex-row flex-col justify-between md:px-10 px-5 mt-14 md:mt-0">
         <div className="relative inline-block md:translate-y-20">
@@ -92,7 +78,9 @@ const NutritionSection = () => {
               <h1 className="nutrition-title">It still does</h1>
             </div>
             <div
-              style={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
+              style={{
+                clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
+              }}
               className="nutrition-text-scroll place-self-start"
             >
               <div className="bg-yellow-brown pb-5 md:pt-0 pt-3 md:px-5 px-3">
@@ -105,8 +93,7 @@ const NutritionSection = () => {
         <div className="flex md:justify-center items-center translate-y-5">
           <div className="md:max-w-xs max-w-md">
             <p className="text-lg md:text-right text-balance font-paragraph">
-              Milk contains a wide array of nutrients, including vitamins,
-              minerals, and protein, and this is lactose free
+              Milk contains a wide array of nutrients, including vitamins, minerals, and protein, and this is lactose free
             </p>
           </div>
         </div>
@@ -118,13 +105,10 @@ const NutritionSection = () => {
                 <div>
                   <p className="md:text-lg font-paragraph">{nutrient.label}</p>
                   <p className="font-paragraph text-sm mt-2">up to</p>
-                  <p className="text-2xl md:text-4xl tracking-tighter font-bold">
-                    {nutrient.amount}
-                  </p>
+                  <p className="text-2xl md:text-4xl tracking-tighter font-bold">{nutrient.amount}</p>
                 </div>
-                {index !== lists.length - 1 && (
-                  <div className="spacer-border" />
-                )}
+
+                {index !== lists.length - 1 && <div className="spacer-border" />}
               </div>
             ))}
           </div>

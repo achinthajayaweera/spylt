@@ -1,11 +1,9 @@
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger, SplitText } from "gsap/all";
+import { SplitText } from "gsap/all";
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useRef } from "react";
-
-gsap.registerPlugin(ScrollTrigger, SplitText);
 
 interface HeroSectionProps {
   onLoaded: () => void;
@@ -14,12 +12,18 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = ({ onLoaded, triggerAnimation }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  
+  const isMobile = useMediaQuery({
+    query: "(max-width: 768px)",
+  });
 
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
-  const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
+  const isTablet = useMediaQuery({
+    query: "(max-width: 1024px)",
+  });
 
   useEffect(() => {
     const timer = setTimeout(() => {
+      console.log("HeroSection: Safety timeout triggered");
       onLoaded();
     }, 6000);
 
@@ -32,6 +36,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onLoaded, triggerAnimation })
     const video = videoRef.current;
     if (video) {
       if (video.readyState >= 3) {
+        console.log("HeroSection: Video already loaded");
         onLoaded();
         clearTimeout(timer);
       }
@@ -43,7 +48,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onLoaded, triggerAnimation })
   useEffect(() => {
     if (triggerAnimation && videoRef.current) {
       videoRef.current.currentTime = 0;
-      videoRef.current.play().catch((err) => console.log("Video play failed:", err));
+      videoRef.current.play().catch(err => console.log("Video play failed:", err));
     }
   }, [triggerAnimation]);
 
@@ -51,9 +56,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onLoaded, triggerAnimation })
     () => {
       if (!triggerAnimation) return;
 
-      const titleSplit = SplitText.create(".hero-title", { type: "chars" });
+      const titleSplit = SplitText.create(".hero-title", {
+        type: "chars",
+      });
 
-      const tl = gsap.timeline({ delay: 1 });
+    const tl = gsap.timeline({
+      delay: 1,
+    });
 
       tl.to(".hero-content", {
         opacity: 1,
@@ -109,7 +118,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onLoaded, triggerAnimation })
                 width={3000}
                 height={3000}
                 className="absolute bottom-40 size-full object-cover"
-                onLoad={() => onLoaded()}
+                onLoad={() => {
+                  console.log("HeroSection: Mobile BG loaded");
+                  onLoaded();
+                }}
               />
             )}
             <Image
@@ -118,7 +130,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onLoaded, triggerAnimation })
               width={500}
               height={500}
               className="absolute bottom-0 left-1/2 -translate-x-1/2 object-auto"
-              onLoad={() => { if (!isMobile) onLoaded(); }}
+              onLoad={() => {
+                if (!isMobile) {
+                  console.log("HeroSection: Tablet/Desktop Img loaded");
+                  onLoaded();
+                }
+              }}
             />
           </>
         ) : (
@@ -130,27 +147,31 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onLoaded, triggerAnimation })
             playsInline
             preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
-            onCanPlayThrough={() => onLoaded()}
-            onLoadedData={() => onLoaded()}
+            onCanPlayThrough={() => {
+              console.log("HeroSection: Video can play through");
+              onLoaded();
+            }}
+            onLoadedData={() => {
+              console.log("HeroSection: Video data loaded");
+              onLoaded();
+            }}
           />
         )}
-
         <div className="hero-content opacity-0">
           <div className="overflow-hidden">
             <h1 className="hero-title">Freaking Delicious</h1>
           </div>
           <div
-            style={{ clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)" }}
+            style={{
+              clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
+            }}
             className="hero-text-scroll"
           >
             <div className="hero-subtitle">
-              <h1>Protein + Caffeine</h1>
+              <h1>Protein + Caffeine </h1>
             </div>
           </div>
-          <h2>
-            Live life to the fullest with SPYLT: Shatter boredom and embrace
-            your inner kid with every deliciously smooth chug.
-          </h2>
+          <h2>Live life to the fullest with SPYLT: Shatter boredom and embrace your inner kid with every deliciously smooth chug.</h2>
           <div className="hero-button">
             <p>Chug a SPYLT</p>
           </div>

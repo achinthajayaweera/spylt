@@ -1,12 +1,9 @@
 import { useGSAP } from "@gsap/react";
 import { flavorList } from "../constants";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
 import { useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const FlavorSlider = () => {
   const sliderRef = useRef<null | HTMLDivElement>(null);
@@ -16,8 +13,7 @@ const FlavorSlider = () => {
   });
 
   useGSAP(() => {
-    const scrollAmount =
-      (sliderRef?.current?.scrollWidth as number) - window.innerWidth;
+    const scrollAmount = (sliderRef?.current?.scrollWidth as number) - window.innerWidth;
 
     if (!isTablet) {
       const tl = gsap.timeline({
@@ -73,33 +69,12 @@ const FlavorSlider = () => {
     <div ref={sliderRef} className="slider-wrapper">
       <div className="flavors">
         {flavorList.map((flavor) => (
-          <div
-            key={flavor.name}
-            className={`relative z-30 lg:w-[50vw] w-96 lg:h-[70vh] md:w-[90vw] md:h-[50vh] h-80 flex-none ${flavor.rotation}`}
-          >
-            <Image
-              src={`/images/${flavor.color}-bg.svg`}
-              alt="flavor"
-              width={1000}
-              height={1000}
-              className="absolute bottom-0"
-            />
+          <div key={flavor.name} className={`relative z-30 lg:w-[50vw] w-96 lg:h-[70vh] md:w-[90vw] md:h-[50vh] h-80 flex-none ${flavor.rotation}`}>
+            <Image src={`/images/${flavor.color}-bg.svg`} alt="flavor" width={1000} height={1000} className="absolute bottom-0" />
 
-            <Image
-              src={`/images/${flavor.color}-drink.webp`}
-              alt="flavor"
-              width={455}
-              height={455}
-              className="drinks w-64 md:w-[455px]"
-            />
+            <Image src={`/images/${flavor.color}-drink.webp`} alt="flavor" width={455} height={455} className="drinks w-64 md:w-[455px]" />
 
-            <Image
-              src={`/images/${flavor.color}-elements.webp`}
-              alt="flavor"
-              width={500}
-              height={500}
-              className="elements"
-            />
+            <Image src={`/images/${flavor.color}-elements.webp`} alt="flavor" width={500} height={500} className="elements" />
 
             <h1>{flavor.name}</h1>
           </div>

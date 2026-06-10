@@ -79,19 +79,9 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoaded, onFinish }) => {
   );
 
   return (
-    <div
-      ref={containerRef}
-      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-dark-brown overflow-hidden"
-    >
+    <div ref={containerRef} className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-dark-brown overflow-hidden">
       <div ref={logoRef} className="relative mb-8">
-        <Image
-          src="/images/nav-logo.svg"
-          alt="Spylt Logo"
-          width={150}
-          height={150}
-          className="w-32 md:w-60"
-          priority
-        />
+        <Image src="/images/nav-logo.svg" alt="Spylt Logo" width={150} height={150} className="w-32 md:w-60" priority />
       </div>
       <div className="w-64 h-1 bg-dark-brown/10 rounded-full overflow-hidden relative">
         <div
@@ -100,9 +90,7 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoaded, onFinish }) => {
           style={{ width: `${progress}%` }}
         />
       </div>
-      <div className="mt-4 font-bold text-milk uppercase tracking-widest text-xs">
-        Loading... {Math.round(progress)}%
-      </div>
+      <div className="mt-4 font-bold text-milk uppercase tracking-widest text-xs">Loading... {Math.round(progress)}%</div>
     </div>
   );
 };

@@ -1,16 +1,4 @@
-const ClipPathTitle = ({
-  title,
-  color,
-  bg,
-  className,
-  borderColor,
-}: {
-  title: string;
-  color: string;
-  bg: string;
-  className: string;
-  borderColor: string;
-}) => {
+const ClipPathTitle = ({ title, color, bg, className, borderColor } : { title: string, color: string, bg: string, className: string, borderColor: string}) => {
   return (
     <div className="general-title">
       <div
@@ -22,9 +10,17 @@ const ClipPathTitle = ({
       >
         <div
           className="pb-5 md:px-14 px-3 md:pt-0 pt-3"
-          style={{ backgroundColor: bg }}
+          style={{
+            backgroundColor: bg,
+          }}
         >
-          <h2 style={{ color: color }}>{title}</h2>
+          <h2
+            style={{
+              color: color,
+            }}
+          >
+            {title}
+          </h2>
         </div>
       </div>
     </div>

@@ -1,8 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger, SplitText } from "gsap/all";
-
-gsap.registerPlugin(ScrollTrigger, SplitText);
+import { SplitText } from "gsap/all";
 
 const MessageSection = () => {
   useGSAP(() => {
@@ -28,7 +26,6 @@ const MessageSection = () => {
         scrub: true,
       },
     });
-
     gsap.to(secMsgSplit.words, {
       color: "#faeade",
       ease: "power1.in",
@@ -77,7 +74,9 @@ const MessageSection = () => {
             <h1 className="first-message">Stir up your fearless past and</h1>
 
             <div
-              style={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
+              style={{
+                clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
+              }}
               className="msg-text-scroll"
             >
               <div className="bg-light-brown md:pb-5 pb-3 px-5">
@@ -85,17 +84,14 @@ const MessageSection = () => {
               </div>
             </div>
 
-            <h1 className="second-message">
-              your future with every gulp of Perfect Protein
-            </h1>
+            <h1 className="second-message">your future with every gulp of Perfect Protein</h1>
           </div>
 
           <div className="flex-center md:mt-20 mt-10">
             <div className="max-w-md px-10 flex-center overflow-hidden">
               <p>
-                Rev up your rebel spirit and feed the adventure of life with
-                SPYLT, where you&apos;re one chug away from epic nostalgia and
-                fearless fun.
+                Rev up your rebel spirit and feed the adventure of life with SPYLT, where you&apos;re one chug away from epic nostalgia and fearless
+                fun.
               </p>
             </div>
           </div>

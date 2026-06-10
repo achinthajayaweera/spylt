@@ -1,12 +1,9 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
 
-gsap.registerPlugin(ScrollTrigger);
-
-const VideoPin = () => {
+const VideoPinSection = () => {
   const isMobile = useMediaQuery({
     query: "(max-width: 768px)",
   });
@@ -34,36 +31,16 @@ const VideoPin = () => {
     <section className="vd-pin-section">
       <div
         style={{
-          clipPath: isMobile
-            ? "circle(100% at 50% 50%)"
-            : "circle(6% at 50% 50%)",
+          clipPath: isMobile ? "circle(100% at 50% 50%)" : "circle(6% at 50% 50%)",
         }}
         className="size-full video-box"
       >
-        <video
-          src="/videos/pinvideo.mp4"
-          playsInline
-          muted
-          loop
-          autoPlay
-        />
+        <video src="/videos/pinvideo.mp4" playsInline muted loop autoPlay />
 
         <div className="abs-center md:scale-100 scale-200">
-          <Image
-            src="/images/circle-text.svg"
-            alt=""
-            width={500}
-            height={500}
-            className="spin-circle"
-          />
+          <Image src="/images/circle-text.svg" alt="" width={500} height={500} className="spin-circle" />
           <div className="play-btn">
-            <Image
-              src="/images/play.svg"
-              alt=""
-              width={500}
-              height={500}
-              className="size-[3vw] ml-[.5vw]"
-            />
+            <Image src="/images/play.svg" alt="" width={500} height={500} className="size-[3vw] ml-[.5vw]" />
           </div>
         </div>
       </div>
@@ -71,4 +48,4 @@ const VideoPin = () => {
   );
 };
 
-export default VideoPin;
+export default VideoPinSection;

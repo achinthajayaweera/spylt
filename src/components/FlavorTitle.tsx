@@ -1,8 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger, SplitText } from "gsap/all";
-
-gsap.registerPlugin(ScrollTrigger, SplitText);
+import { SplitText } from "gsap/all";
 
 const FlavorTitle = () => {
   useGSAP(() => {
@@ -50,7 +48,9 @@ const FlavorTitle = () => {
       </div>
 
       <div
-        style={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
+        style={{
+          clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
+        }}
         className="flavor-text-scroll"
       >
         <div className="bg-mid-brown pb-5 2xl:pt-0 pt-3 2xl:px-5 px-3">

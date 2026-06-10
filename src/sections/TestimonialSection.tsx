@@ -2,9 +2,6 @@ import { useRef } from "react";
 import { card } from "../constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const TestimonialSection = () => {
   const vdRef = useRef<HTMLVideoElement[]>([]);
@@ -28,12 +25,16 @@ const TestimonialSection = () => {
     })
       .to(
         ".testimonials-section .sec-title",
-        { xPercent: 25 },
+        {
+          xPercent: 25,
+        },
         "<"
       )
       .to(
         ".testimonials-section .third-title",
-        { xPercent: -50 },
+        {
+          xPercent: -50,
+        },
         "<"
       );
 
@@ -73,10 +74,10 @@ const TestimonialSection = () => {
       </div>
 
       <div className="pin-box">
-        {card.map((c, index) => (
+        {card.map((card, index) => (
           <div
             key={index}
-            className={`vd-card ${c.translation} ${c.rotation}`}
+            className={`vd-card ${card.translation} ${card.rotation}`}
             onMouseEnter={() => handlePlay(index)}
             onMouseLeave={() => handlePause(index)}
           >
@@ -84,7 +85,7 @@ const TestimonialSection = () => {
               ref={(el) => {
                 if (el) vdRef.current[index] = el;
               }}
-              src={c.src}
+              src={card.src}
               playsInline
               muted
               loop
