@@ -191,6 +191,22 @@ body::-webkit-scrollbar {
     }
   }
 
+  .testimonials-section {
+    @apply bg-milk relative w-screen h-screen overflow-hidden;
+
+    h1 {
+      @apply general-title;
+    }
+
+    .pin-box {
+      @apply absolute bottom-0 left-1/2 -translate-x-1/2 flex items-end justify-center gap-3 w-full px-5;
+
+      .vd-card {
+        @apply relative flex-none md:w-44 w-24 md:h-72 h-40 rounded-2xl overflow-hidden cursor-pointer;
+      }
+    }
+  }
+
 @layer utilities {
   .flex-center {
     @apply flex justify-center items-center;
