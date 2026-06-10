@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Preloader from "@/components/Preloader";
 import HeroSection from "@/sections/HeroSection";
 import MessageSection from "@/sections/MessageSection";
+import FlavorSection from "@/sections/FlavorSection";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -21,6 +22,7 @@ export default function Home() {
         triggerAnimation={triggerAnimation}
       />
       <MessageSection />
+      <FlavorSection />
     </main>
   );
 }
