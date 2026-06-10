@@ -1,13 +1,12 @@
 "use client";
 import Navbar from "@/components/Navbar";
+import HeroSection from "@/sections/HeroSection";
 
 export default function Home() {
   return (
     <main>
       <Navbar />
-      <div>
-        {/* Sections will be added in upcoming versions */}
-      </div>
+      <HeroSection />
     </main>
   );
 }
