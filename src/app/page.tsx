@@ -6,6 +6,7 @@ import HeroSection from "@/sections/HeroSection";
 import MessageSection from "@/sections/MessageSection";
 import FlavorSection from "@/sections/FlavorSection";
 import NutritionSection from "@/sections/NutritionSection";
+import BenefitSection from "@/sections/BenefitSection";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -25,6 +26,7 @@ export default function Home() {
       <MessageSection />
       <FlavorSection />
       <NutritionSection />
+      <BenefitSection />
     </main>
   );
 }

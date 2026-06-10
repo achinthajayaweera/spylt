@@ -162,6 +162,18 @@ body::-webkit-scrollbar {
     }
   }
 
+  .benefit-section {
+    @apply bg-milk overflow-hidden pb-20;
+
+    p {
+      @apply font-paragraph text-dark-brown text-center md:text-xl text-base leading-[130%];
+    }
+
+    .overlay-box {
+      @apply w-full md:h-[70vh] h-60 mt-20 overflow-hidden;
+    }
+  }
+
 @layer utilities {
   .flex-center {
     @apply flex justify-center items-center;
