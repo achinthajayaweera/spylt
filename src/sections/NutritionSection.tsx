@@ -67,9 +67,9 @@ const NutritionSection = () => {
 
   return (
     <section className="nutrition-section">
-      <Image src="/images/slider-dip.webp" width={2000} height={2000} alt="slider-dip" className="w-full object-cover" />
+      <Image src="/spylt/images/slider-dip.webp" width={2000} height={2000} alt="slider-dip" className="w-full object-cover" />
 
-      <Image src="/images/big-img.webp" width={3000} height={3000} alt="big-img" className="big-img" />
+      <Image src="/spylt/images/big-img.webp" width={3000} height={3000} alt="big-img" className="big-img" />
 
       <div className="flex md:flex-row flex-col justify-between md:px-10 px-5 mt-14 md:mt-0">
         <div className="relative inline-block md:translate-y-20">
@@ -119,3 +119,4 @@ const NutritionSection = () => {
 };
 
 export default NutritionSection;
+

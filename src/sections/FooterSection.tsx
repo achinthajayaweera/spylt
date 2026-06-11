@@ -8,7 +8,7 @@ const FooterSection = () => {
 
   return (
     <footer className="footer-section">
-      <Image src="/images/footer-dip.webp" alt="" width={3000} height={3000} className="w-full object-cover -translate-y-1" />
+      <Image src="/spylt/images/footer-dip.webp" alt="" width={3000} height={3000} className="w-full object-cover -translate-y-1" />
 
       <div className="2xl:h-[110dvh] relative md:pt-[20vh] pt-[10vh]">
         <div className="overflow-hidden z-10">
@@ -16,9 +16,9 @@ const FooterSection = () => {
         </div>
 
         {isMobile ? (
-          <Image src="/images/footer-drink.webp" alt="" width={3000} height={3000} className="absolute top-0 object-contain" />
+          <Image src="/spylt/images/footer-drink.webp" alt="" width={3000} height={3000} className="absolute top-0 object-contain" />
         ) : (
-          <video src="/videos/splash1.mp4" autoPlay playsInline muted className="absolute top-0 object-contain mix-blend-lighten" />
+          <video src="/spylt/videos/splash1.mp4" autoPlay playsInline muted className="absolute top-0 object-contain mix-blend-lighten" />
         )}
 
         <div className="flex-center gap-5 relative z-10 md:mt-20 mt-5">
@@ -54,7 +54,7 @@ const FooterSection = () => {
             <p>Get Exclusive Early Access and Stay Informed About Product Updates, Events, and More!</p>
             <div className="flex justify-between items-center border-b border-[#D9D9D9] py-5 md:mt-10">
               <input type="email" placeholder="Enter your email" className="w-full placeholder:font-sans placeholder:text-[#999999]" />
-              <Image src="/images/arrow.svg" alt="arrow" width={70} height={70} />
+              <Image src="/spylt/images/arrow.svg" alt="arrow" width={70} height={70} />
             </div>
           </div>
         </div>
@@ -83,3 +83,4 @@ const FooterSection = () => {
 };
 
 export default FooterSection;
+

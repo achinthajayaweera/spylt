@@ -113,7 +113,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onLoaded, triggerAnimation })
           <>
             {isMobile && (
               <Image
-                src="/images/hero-bg.webp"
+                src="/spylt/images/hero-bg.webp"
                 alt="hero-bg"
                 width={3000}
                 height={3000}
@@ -125,7 +125,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onLoaded, triggerAnimation })
               />
             )}
             <Image
-              src="/images/hero-img.webp"
+              src="/spylt/images/hero-img.webp"
               alt="hero-img"
               width={500}
               height={500}
@@ -141,7 +141,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onLoaded, triggerAnimation })
         ) : (
           <video
             ref={videoRef}
-            src="/videos/herobg.mp4"
+            src="/spylt/videos/herobg.mp4"
             autoPlay
             muted
             playsInline
@@ -182,3 +182,5 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onLoaded, triggerAnimation })
 };
 
 export default HeroSection;
+
+

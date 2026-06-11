@@ -35,12 +35,12 @@ const VideoPinSection = () => {
         }}
         className="size-full video-box"
       >
-        <video src="/videos/pinvideo.mp4" playsInline muted loop autoPlay />
+        <video src="/spylt/videos/pinvideo.mp4" playsInline muted loop autoPlay />
 
         <div className="abs-center md:scale-100 scale-200">
-          <Image src="/images/circle-text.svg" alt="" width={500} height={500} className="spin-circle" />
+          <Image src="/spylt/images/circle-text.svg" alt="" width={500} height={500} className="spin-circle" />
           <div className="play-btn">
-            <Image src="/images/play.svg" alt="" width={500} height={500} className="size-[3vw] ml-[.5vw]" />
+            <Image src="/spylt/images/play.svg" alt="" width={500} height={500} className="size-[3vw] ml-[.5vw]" />
           </div>
         </div>
       </div>
@@ -49,3 +49,5 @@ const VideoPinSection = () => {
 };
 
 export default VideoPinSection;
+
+
